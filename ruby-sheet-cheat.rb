@@ -1,3 +1,5 @@
+copy pasted from http://reference.jumpingmonkey.org/programming_languages/ruby/ruby-one-liners.html
+
 
 File Spancing
 # double space a file

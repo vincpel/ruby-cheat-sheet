@@ -1,4 +1,5 @@
 
+File Spancing
 # double space a file
     $  ruby -pe 'puts' < file.txt
 # triple space a file
@@ -9,7 +10,7 @@
     $  ruby -e 'puts STDIN.readlines.to_s.gsub(/\n\n/, "\n")' < file.txt
 
 
-
+Numbering
 # number each line of a file (left justified).
     $  ruby -ne 'printf("-%6s%s", $., $_)' < file.txt
 # number each line of a file (right justified).
@@ -21,6 +22,7 @@
     $  ruby -e 'while gets; end; puts $.' < file.txt
 
 
+Text Conversion and Substitution
   # convert DOS newlines (CR/LF) to Unix format (LF)
   # - strip newline regardless; re-print with unix EOL
       $  ruby -ne 'BEGIN{$\="\n"}; print $_.chomp' < file.txt
@@ -83,7 +85,7 @@
       $  ruby -pe 'puts if $. % 6 == 0' < file.txt
 
 
-
+Selective Printing of Certain Lines
   # print first 10 lines of a file (emulate 'head')
       $  ruby -pe 'exit if $. > 10' < file.txt
 
@@ -140,6 +142,7 @@
       $  ruby -pe 'next unless $_.chomp.length < 65' < file.txt
       $  ruby -lpe 'next unless $_.length < 65' < file.txt
 
+Selective Deletion of Certain Lines
   # print section of file from regex to end of file
       $  ruby -pe '@found=true if $_ =~ /regex/; next unless @found' < file.txt
 
